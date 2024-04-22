@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts.js"></script>
+</head>
+<body onload="mostrarNotas()">
+    <div>
+        <h2>Boletin educativo</h2>
+    </div>
+    <div class="estudiante">
+        <h3>Alumno: Martin Williner</h3>
+    </div>
+    <h4>Notas:</h4>
+    <ul id="listaNotas">
+        <!-- resultador del loop for -->
+    </ul>
+
+    <div class="info">
+        <h4>Promedio: <span id="promedio"></span></h4>
+        <button onclick="promedio()">Calcular</button>
+
+        <h4>Nota mas alta: <span id="nota"></span></h4>
+        <button onclick="notaAlta()">Ver nota</button>
+        
+        <h4>Hay aplazo? <span id="aplazo"></span></h4>
+        <button onclick="aplazo()">Consultar</button>
+    </div>
+
+
+</body>
+</html>

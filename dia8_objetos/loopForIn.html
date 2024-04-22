@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Gato(raza, edad){
+            this.patas = 4;
+            this.maullar = function(){
+                console.log("Miau")
+            }
+            this.raza = raza;
+            this.edad = edad;
+        }
+
+        let ron = new Gato('Naranja', 1);
+        let camila = new Gato('Siames', 14);
+
+        //ejemplo uso for in
+
+        for(let caracteristica in ron){
+            console.log(caracteristica + ": " + ron[caracteristica]);
+        }
+
+    </script>
+</body>
+</html>
