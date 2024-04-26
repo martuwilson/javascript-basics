@@ -1,0 +1,13 @@
+{
+    "nombre": "Pedro Golcalves",
+    "edad": 25,
+    "esEstudiante": false,
+    "direccion": {
+        "calle": "Avenida siempre viva 742",
+        "ciudad": "Springfield"
+    },
+    "telefonos": [
+        "123456789",
+        "987654321"
+    ]
+}
