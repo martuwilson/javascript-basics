@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Una promesa en js es un objeto que representa la terminacion o el fracaso de una operacion asincrona. Esta promesa puede estar pendiente, resuelta o rechazada. Esta promesa se puede resolver o rechazar con un valor. Esta promesa se puede encadenar con otras promesas.
+    </p>
+
+    <script>
+        /* let miPromesa = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                let error = false;
+
+                if(error){
+                    reject("La promesa se rechazo")
+                }else{
+                    resolve("La promesa se resolvio")
+                }
+            }, 3000)
+        })
+
+        miPromesa.then(function(resultado){
+            console.log(resultado)
+        }).catch(function(error){
+            console.log(error)
+        }) */
+        // ejemplo 1
+        
+        let promesa1 = new Promise(function(resolve, reject){
+            setTimeout(resolve, 2000, "hola")
+        });
+
+        let promesa2 = new Promise(function(resolve, reject){
+            setTimeout(resolve, 1000, "mundo")
+        });
+
+        Promise.all([promesa1, promesa2]).then(function(valores){
+            console.log(valores)
+        });
+
+        console.log("El codigo sigue su camino")
+
+        // ejemplo 2
+
+        function obtenerUsuarios(){
+            return new Promise(function(resolve, reject){
+                let xhr = new XMLHttpRequest();
+                xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+                xhr.onload = function(){
+                    if(xhr.status == 200){
+                        resolve(JSON.parse(xhr.responseText))
+                    }else{
+                        reject("Error")
+                    }
+                }
+                xhr.send();
+            })
+        }
+
+        obtenerUsuarios().then(function(usuarios){
+            console.log(usuarios)
+        }).catch(function(error){
+            console.log(error)
+        })
+    </script>
+</body>
+</html>

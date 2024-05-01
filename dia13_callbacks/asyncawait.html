@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Async y await son una forma de trabajar con promesas de manera mas sencilla. Async es una palabra clave que se usa para declarar una funcion asincrona. Await es una palabra clave que se usa para esperar a que una promesa se resuelva. Await solo se puede usar dentro de una funcion async.
+        Cuando se usa await una funcion async se detiene en esa linea hasta que la promesa se resuelva.
+    </p>
+    <script>
+        async function obtenerUsuarios() {
+           let respuesta = await fetch("https://api.datos.gob.mx/v1/precio.gasolina.publico")
+           let datos = await respuesta.json();
+
+              console.log(datos);
+        }
+
+        obtenerUsuarios();
+        console.log('el codigo sigue')
+    </script>
+</body>
+</html>
